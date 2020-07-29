@@ -1,29 +1,29 @@
 <template>
   <div id="app">
-    <HelloWorld v-bind:title="message" v-on:result-event="appAction"/>
-    <hr>
-    <p>{{ result }}</p>
+    <HelloWorld title="JSX?">
+    </HelloWorld>
   </div>
 </template>
+
+
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 
+
 export default {
-  name: 'App',
+  name: 'app',
   components: {
     HelloWorld
   },
   data: function(){
     return {
-      message: 'HELLO',
-      result: 'no event.',
+      slotobjs: [
+        {name:'Taro', mail:'taro@yamada'},
+        {name:'Hanako', mail:'hanako@flower'},
+        {name:'Sachiko', mail:'sachiko@happy'},
+      ],
     };
-  },
-  methods: {
-    appAction: function(message){
-      this.result = '(*** you send:"' + message + '". ***)';
-    }
   }
 }
 </script>
